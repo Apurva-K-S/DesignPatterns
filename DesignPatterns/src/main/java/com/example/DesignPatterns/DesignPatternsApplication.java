@@ -1,5 +1,6 @@
 package com.example.DesignPatterns;
 
+import com.example.DesignPatterns.Behavioural.COR.ATMDispenser;
 import com.example.DesignPatterns.Creational.Factory.Animal;
 import com.example.DesignPatterns.Creational.Factory.BalancedAnimalFactory;
 import com.example.DesignPatterns.Creational.Factory.RandomAnimalFactory;
@@ -12,6 +13,7 @@ public class DesignPatternsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DesignPatternsApplication.class, args);
+		/*
 		// Singleton usage
 		System.out.println("first => " + Singleton.getInstance());
 		System.out.println("second => " + Singleton.getInstance());
@@ -32,6 +34,10 @@ public class DesignPatternsApplication {
 			Animal animal = balancedAnimalFactory.createAnimal();
 			animal.speak();
 		}
+		*/
+		// Chain of Responsibility usage.
+		ATMDispenser dispenser = new ATMDispenser();
+		dispenser.getAmountFromAtm();
 	}
 
 }
