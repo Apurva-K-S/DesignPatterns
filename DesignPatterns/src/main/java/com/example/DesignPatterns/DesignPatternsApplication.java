@@ -1,12 +1,17 @@
 package com.example.DesignPatterns;
 
 import com.example.DesignPatterns.Behavioural.COR.ATMDispenser;
+import com.example.DesignPatterns.Behavioural.Observer.AajTakNewsObserver;
+import com.example.DesignPatterns.Behavioural.Observer.Subject;
+import com.example.DesignPatterns.Behavioural.Observer.WeatherSubject;
 import com.example.DesignPatterns.Creational.Factory.Animal;
 import com.example.DesignPatterns.Creational.Factory.BalancedAnimalFactory;
 import com.example.DesignPatterns.Creational.Factory.RandomAnimalFactory;
 import com.example.DesignPatterns.Creational.Singleton;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.Scanner;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
@@ -34,10 +39,24 @@ public class DesignPatternsApplication {
 			Animal animal = balancedAnimalFactory.createAnimal();
 			animal.speak();
 		}
-		*/
+
 		// Chain of Responsibility usage.
 		ATMDispenser dispenser = new ATMDispenser();
 		dispenser.getAmountFromAtm();
+		 */
+		WeatherSubject weatherSubject = new WeatherSubject();
+		AajTakNewsObserver aajTakNewsObserver = new AajTakNewsObserver();
+
+		weatherSubject.register(aajTakNewsObserver);
+		aajTakNewsObserver.setSubject(weatherSubject);
+
+
+		while(true) {
+			System.out.print("Enter current temperature in bangalore in Celcius: ");
+			Scanner sc = new Scanner(System.in);
+			double temperature = sc.nextDouble();
+			weatherSubject.setTemperature(temperature);
+		}
 	}
 
 }

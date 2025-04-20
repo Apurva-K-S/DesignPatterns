@@ -10,4 +10,14 @@ One request is passed on to multiple stages and each stage decides what needs to
 2. Support Ticket Resolution System: escalation levels. if level 3 ticket is not resolved within specific time then it will escalate to level 2.
 3. Approval/Appraisal workflow system: Manager, Team lead/principal engineer, Associate Director, Director, CTO.
 4. Logger System: Debug -> Info -> Warn -> Error. Each handler logs a message if it matches or exceeds its severity level and passes it to the next handler.
-5. 
+
+## Observer Pattern
+Observer design pattern is useful when you are interested in the state of an object and want to get notified whenever there is any change. 
+In observer pattern, the object that watch on the state of another object are called Observer and the object that is being watched is called Subject.
+### when to use observer pattern:
+1. Event driven systems.
+2. when observers change dynamically.
+### Usecases for observer pattern:
+1. Notification service: SMS, push, Email
+2. Stock market ticker: Stock - subject, investor dashboards - observers.
+3. Chat application: showing online/offline status - subject, contacts - observers.
