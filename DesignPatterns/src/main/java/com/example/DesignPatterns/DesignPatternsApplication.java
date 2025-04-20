@@ -4,6 +4,7 @@ import com.example.DesignPatterns.Behavioural.COR.ATMDispenser;
 import com.example.DesignPatterns.Behavioural.Observer.AajTakNewsObserver;
 import com.example.DesignPatterns.Behavioural.Observer.Subject;
 import com.example.DesignPatterns.Behavioural.Observer.WeatherSubject;
+import com.example.DesignPatterns.Behavioural.State.Order;
 import com.example.DesignPatterns.Behavioural.Strategy.*;
 import com.example.DesignPatterns.Creational.Factory.Animal;
 import com.example.DesignPatterns.Creational.Factory.BalancedAnimalFactory;
@@ -12,6 +13,7 @@ import com.example.DesignPatterns.Creational.Singleton;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -60,7 +62,7 @@ public class DesignPatternsApplication {
 			double temperature = sc.nextDouble();
 			weatherSubject.setTemperature(temperature);
 		}
-		*/
+
 		// Strategy pattern
 		Item item1 = new Item("Lays", 10);
 		Item item2 = new Item("kurkure", 20);
@@ -73,5 +75,23 @@ public class DesignPatternsApplication {
 		cart.pay(new CreditCardPayment());
 		cart.pay(new upiPayment());
 		cart.pay(new CashOnDeliveryPayment());
+
+		 */
+		// State Pattern
+		Order order = new Order();
+		ArrayList<String> items = new ArrayList<>();
+		items.add("Mango");
+		items.add("Kiwi");
+		order.setItems(items);
+		order.getStatus();
+		order.nextState(); // pay
+		order.getStatus();
+		order.nextState(); // ship
+		order.getStatus();
+		order.nextState(); // cancel after shipping — not allowed
+		order.getStatus();
+		order.nextState(); // deliver
+		order.getStatus();
+		order.cancel();
 	}
 }

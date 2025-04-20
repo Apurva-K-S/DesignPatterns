@@ -24,3 +24,24 @@ In observer pattern, the object that watch on the state of another object are ca
 
 ## Strategy Pattern
 explained in strategy_readme.md
+
+## State Pattern
+Object changes behaviour based on its internal state. Avoids massive if-else or switch-case chains.
+### When to use state pattern?
+### Usecases for state pattern:
+1. Vending machine:
+   1. States: Idle, HasMoney, Dispensing, OutOfStock 
+   2. Behavior: Based on state, the same pressButton() may do totally different things.
+2. Traffic light system:
+   1. Light transitions (Red, Green, Yellow)
+3. Jira Workflow:
+   1. TRD started, TRD in progress, TRD in review, TRD completed, Dev started, Dev in progress, Dev completed etc.
+   2. Each state has specific set of options and each state has different behaviour
+4. Media player:
+   1. different states - playingState, pausedState, StoppedState.
+5. ATM machine:
+   1. Behavior: Based on ATM state (HasCard, NoCard, HasPin, OutOfCash)
+   2. State pattern avoids deep if-else logic for every ATM operation.
+6. Online Order System 
+   1. State Pattern manages: Order status lifecycle 
+   2. States: Created, Paid, Shipped, Delivered, Cancelled
