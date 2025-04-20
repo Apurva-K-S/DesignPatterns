@@ -21,3 +21,6 @@ In observer pattern, the object that watch on the state of another object are ca
 1. Notification service: SMS, push, Email
 2. Stock market ticker: Stock - subject, investor dashboards - observers.
 3. Chat application: showing online/offline status - subject, contacts - observers.
+
+## Strategy Pattern
+explained in strategy_readme.md

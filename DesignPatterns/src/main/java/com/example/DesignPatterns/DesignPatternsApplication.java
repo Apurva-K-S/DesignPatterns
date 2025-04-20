@@ -4,6 +4,7 @@ import com.example.DesignPatterns.Behavioural.COR.ATMDispenser;
 import com.example.DesignPatterns.Behavioural.Observer.AajTakNewsObserver;
 import com.example.DesignPatterns.Behavioural.Observer.Subject;
 import com.example.DesignPatterns.Behavioural.Observer.WeatherSubject;
+import com.example.DesignPatterns.Behavioural.Strategy.*;
 import com.example.DesignPatterns.Creational.Factory.Animal;
 import com.example.DesignPatterns.Creational.Factory.BalancedAnimalFactory;
 import com.example.DesignPatterns.Creational.Factory.RandomAnimalFactory;
@@ -43,7 +44,9 @@ public class DesignPatternsApplication {
 		// Chain of Responsibility usage.
 		ATMDispenser dispenser = new ATMDispenser();
 		dispenser.getAmountFromAtm();
-		 */
+
+
+		// Observer Pattern
 		WeatherSubject weatherSubject = new WeatherSubject();
 		AajTakNewsObserver aajTakNewsObserver = new AajTakNewsObserver();
 
@@ -57,6 +60,18 @@ public class DesignPatternsApplication {
 			double temperature = sc.nextDouble();
 			weatherSubject.setTemperature(temperature);
 		}
-	}
+		*/
+		// Strategy pattern
+		Item item1 = new Item("Lays", 10);
+		Item item2 = new Item("kurkure", 20);
+		Item item3 = new Item("Too yumm!", 20);
+		Cart cart = new Cart();
+		cart.addItem(item1);
+		cart.addItem(item2);
+		cart.addItem(item3);
 
+		cart.pay(new CreditCardPayment());
+		cart.pay(new upiPayment());
+		cart.pay(new CashOnDeliveryPayment());
+	}
 }
